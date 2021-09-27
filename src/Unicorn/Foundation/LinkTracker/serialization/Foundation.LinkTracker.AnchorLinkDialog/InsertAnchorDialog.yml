@@ -1,0 +1,397 @@
+---
+ID: "e3cab448-47cc-4f9b-a65a-e0dabd87cbed"
+Parent: "648afada-20c7-413a-9636-44703a16dfcf"
+Template: "8152cf09-9dd0-40c0-b806-6e91fdf389bc"
+Path: /sitecore/client/Applications/Dialogs/InsertAnchorDialog
+DB: core
+SharedFields:
+- ID: "5e642935-a6fc-48e9-b039-fe1136ced488"
+  Hint: Theme
+  Value: Oxford
+- ID: "9c6106ea-7a5a-48e2-8cad-f0f693b1e2d4"
+  Hint: __Read Only
+  Type: checkbox
+  Value: 1
+- ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
+  Hint: __Renderings
+  Type: layout
+  Value: |
+    <r>
+      <d
+        id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"
+        l="{4F72A793-BDBC-4262-9523-6AADD8FEA487}">
+        <r
+          id="{DAFAFFB8-74AF-4141-A96A-70B16834CEC6}"
+          par="PageCodeScriptFileName=%2fsitecore%2fshell%2fclient%2fApplications%2fDialogs%2fInsertAnchorDialog.js&amp;PageCodeTypeName=SYMB2C.Foundation.LinkTracker.sitecore.shell.client.Applications.Dialogs.InsertAnchor%2c+SYMB2C.Foundation.LinkTracker"
+          ph="Page.Code"
+          uid="{80E3DC19-C6B1-4A86-B69C-D435827D2848}" />
+        <r
+          id="{7BA20861-BC27-4F0E-94DD-8F974628A5C4}"
+          ph="Page.Body"
+          uid="{2893FB8A-59F0-4103-B050-D4095573A3F9}" />
+        <r
+          id="{D47D6BFD-4F1F-4715-9FD1-5957EC0259F5}"
+          par="SearchConfigItemId=%7bA2610C61-C762-43D1-9C05-FD182F828CE6%7d&amp;Database=%24context_contentdatabase&amp;Language=%24context_language&amp;Id=GoalDataSource"
+          ph="Page.Body"
+          uid="{CB0F0097-4445-4514-8E13-3F7F380D1922}" />
+        <r
+          id="{D47D6BFD-4F1F-4715-9FD1-5957EC0259F5}"
+          par="SearchConfigItemId=%7b5C4DBC52-9F74-4967-85A0-F94ED216EEC3%7d&amp;Database=%24context_contentdatabase&amp;Language=%24context_language&amp;Id=EventDataSource"
+          ph="Page.Body"
+          uid="{4A54F10E-3784-4EB9-9264-515EC72E2A85}" />
+        <r
+          ds="{25B1FCAE-B280-424C-B2C2-AD52AC48C2F5}"
+          id="{7717EB6C-9F90-4C58-826D-5E87722A0318}"
+          par="&amp;Id=HeaderTitle"
+          ph="DialogHeader.Title"
+          uid="{1DC97590-77EC-4F75-A687-D86F7D22CAAA}" />
+        <r
+          ds="{BC680EA2-26DE-4054-8AFE-6F9E5FEB7C92}"
+          id="{913AB005-2527-4C2D-9827-FB3A8DFB135C}"
+          par="ButtonType=Primary&amp;IsEnabled=0&amp;Id=InsetAnchor"
+          ph="DialogHeader.Buttons"
+          uid="{F5005B19-B18B-47BE-B0CA-D92005C2FECA}" />
+        <r
+          ds="{BEABC7A4-0D0A-4D4C-9220-CF3124FA4DA3}"
+          id="{913AB005-2527-4C2D-9827-FB3A8DFB135C}"
+          par="ButtonType=Default&amp;Id=CancelButton"
+          ph="DialogHeader.Buttons"
+          uid="{934DAFB9-2F0A-4D6F-9BF9-F61C41C05707}" />
+        <r
+          id="{642C1164-3AE1-4D86-8474-3BC19FE4433B}"
+          ph="DialogHeader"
+          uid="{9BA00345-AD14-44A0-923F-8BE95A6AAA6E}" />
+        <r
+          id="{8817F241-28C9-45AA-8C8D-434E71BCEF4B}"
+          ph="DialogContent"
+          uid="{19F95695-AF1C-47BA-A894-B627EFE8BB03}" />
+        <r
+          ds="{0040D00C-EC60-421D-A1BE-975DA9931B35}"
+          id="{C80807A7-AD13-4693-9822-DD840CB266C5}"
+          par="Click=javascript%3a+window.location.assign(%22%2fsitecore%2fclient%2fApplications%2fDialogs%2fInsertLinkDialog%22)%3b&amp;Id=Back"
+          ph="DialogContent.Back"
+          uid="{41DE1E1A-C733-4AF4-9683-4FF97253420A}" />
+        <r
+          id="{F6C9F461-FCAF-47DC-AA01-C8C64C2EFFB8}"
+          par="UsePadding=1&amp;Id=Title"
+          ph="DialogContent"
+          uid="{80DD63C0-F300-4FC0-A2F7-A34272D4AC2E}" />
+        <r
+          id="{5CB208F6-1860-426B-8221-FAA85B329848}"
+          par="GridColumns=5&amp;Id=LeftPane"
+          ph="RowPanel.Content"
+          uid="{26D08056-1EA6-4D3F-ABC0-64CBDC781B6E}" />
+        <r
+          id="{5CB208F6-1860-426B-8221-FAA85B329848}"
+          par="GridColumns=2&amp;Id=CenterPanel"
+          ph="RowPanel.Content"
+          uid="{94BC33FE-F0C3-4C45-AD45-9EE5E4106E30}" />
+        <r
+          id="{5CB208F6-1860-426B-8221-FAA85B329848}"
+          par="GridColumns=5&amp;Id=RightPane"
+          ph="RowPanel.Content"
+          uid="{0BBE67B9-8BB7-44D7-9560-F4BC17F47369}" />
+        <r
+          id="{C4393722-39FA-4869-9582-3A8EB8983A0D}"
+          par="Id=RowPanel"
+          ph="DialogContent"
+          uid="{C3429BAC-37B4-4551-A763-F4620CE7838C}" />
+        <r
+          id="{F6C9F461-FCAF-47DC-AA01-C8C64C2EFFB8}"
+          par="ContentAlign=Left&amp;UsePadding=1&amp;Id=TextBorder"
+          ph="LeftPane.Content"
+          uid="{28B7160C-854F-4F37-9F88-4FC79BF625F7}" />
+        <r
+          id="{C4393722-39FA-4869-9582-3A8EB8983A0D}"
+          par="Id=TextRow"
+          ph="TextBorder.Content"
+          uid="{58A08A24-6750-4B2C-8DF0-3A4A4D9E2A29}" />
+        <r
+          id="{5CB208F6-1860-426B-8221-FAA85B329848}"
+          par="GridColumns=3&amp;Id=TextLabelCol"
+          ph="TextRow.Content"
+          uid="{34C637FC-F241-4371-ABC9-CBE9FD351788}" />
+        <r
+          id="{5CB208F6-1860-426B-8221-FAA85B329848}"
+          par="GridColumns=9&amp;Id=TextTextCol"
+          ph="TextRow.Content"
+          uid="{CA8E9371-0FCB-4FB1-9559-3D0FF495E66B}" />
+        <r
+          ds="{1F526E33-18AD-419C-8669-3D54FE94CCE6}"
+          id="{7717EB6C-9F90-4C58-826D-5E87722A0318}"
+          par="Id=TextLabel"
+          ph="TextLabelCol.Content"
+          uid="{F42C675E-3407-4CD4-8355-21EC77D31F96}" />
+        <r
+          id="{57F86E9A-1844-45CE-BF8A-62900AE17A92}"
+          par="IsEnabled=1&amp;IsVisible=1&amp;Id=Text"
+          ph="TextTextCol.Content"
+          uid="{FA1E252B-2A91-4DD0-8FF6-43BE879FDA4A}" />
+        <r
+          id="{F6C9F461-FCAF-47DC-AA01-C8C64C2EFFB8}"
+          par="ContentAlign=Left&amp;UsePadding=1&amp;Id=AltBorder"
+          ph="LeftPane.Content"
+          uid="{3B02C34F-836F-4245-BB45-0E668A528A37}" />
+        <r
+          id="{C4393722-39FA-4869-9582-3A8EB8983A0D}"
+          par="Id=AltRow"
+          ph="AltBorder.Content"
+          uid="{364310D8-1DCF-487C-90A4-070FCF913C0C}" />
+        <r
+          id="{5CB208F6-1860-426B-8221-FAA85B329848}"
+          par="GridColumns=3&amp;Id=AltLabelCol"
+          ph="AltRow.Content"
+          uid="{B42E1027-EBBE-4A8F-8954-4ACC55A09084}" />
+        <r
+          id="{5CB208F6-1860-426B-8221-FAA85B329848}"
+          par="GridColumns=9&amp;Id=AltTextCol"
+          ph="AltRow.Content"
+          uid="{4B3BA2A2-24BD-41FE-BA23-12220A868E70}" />
+        <r
+          ds="{47C8D83E-F678-4EC5-8BB7-30506B77D454}"
+          id="{7717EB6C-9F90-4C58-826D-5E87722A0318}"
+          par="Id=AlternateTextLabel"
+          ph="AltLabelCol.Content"
+          uid="{25905F72-EAC0-4434-A8DF-0D04ABE82F11}" />
+        <r
+          id="{57F86E9A-1844-45CE-BF8A-62900AE17A92}"
+          par="IsEnabled=1&amp;IsVisible=1&amp;Id=AlternateText"
+          ph="AltTextCol.Content"
+          uid="{190DC71D-6456-4B82-A87B-BE2C96FCC2C5}" />
+        <r
+          id="{F6C9F461-FCAF-47DC-AA01-C8C64C2EFFB8}"
+          par="ContentAlign=Left&amp;UsePadding=1&amp;Id=GoalBorder"
+          ph="LeftPane.Content"
+          uid="{DE48FDE0-35B2-4B9E-8441-F8CF8EAA367D}" />
+        <r
+          id="{C4393722-39FA-4869-9582-3A8EB8983A0D}"
+          par="Id=GoalRow"
+          ph="GoalBorder.Content"
+          uid="{CE7A6302-04F7-4FEB-A00C-DF26F12A28A3}" />
+        <r
+          id="{5CB208F6-1860-426B-8221-FAA85B329848}"
+          par="GridColumns=3&amp;Id=GoalLabelCol"
+          ph="GoalRow.Content"
+          uid="{09AA92EE-8DB2-4019-87C5-45476376AC45}" />
+        <r
+          id="{5CB208F6-1860-426B-8221-FAA85B329848}"
+          par="GridColumns=9&amp;Id=GoalTextCol"
+          ph="GoalRow.Content"
+          uid="{6DC06112-DBD4-4A9C-8423-EFC358F64213}" />
+        <r
+          ds="{14B0869B-1174-4043-9532-5D9DC96C68D5}"
+          id="{7717EB6C-9F90-4C58-826D-5E87722A0318}"
+          par="Id=GoalLabel"
+          ph="GoalLabelCol.Content"
+          uid="{663C8DE1-64E4-4B82-BB92-98CC7D165985}" />
+        <r
+          id="{25D357D3-3648-4336-9B53-55EED7CFA078}"
+          par="Items=%7bBinding+GoalDataSource.Items%7d&amp;Id=Goal"
+          ph="GoalTextCol.Content"
+          uid="{7AAA83A4-83E4-496F-B274-3E405F6F2752}" />
+        <r
+          id="{57F86E9A-1844-45CE-BF8A-62900AE17A92}"
+          par="IsEnabled=1&amp;IsVisible=0&amp;Id=GoalLoadedValue"
+          ph="GoalTextCol.Content"
+          uid="{12EDBEE7-EAD5-4C11-ABED-AF46D03BF886}" />
+        <r
+          id="{F6C9F461-FCAF-47DC-AA01-C8C64C2EFFB8}"
+          par="ContentAlignment=Left&amp;UsePadding=1&amp;Id=AnchorBorder"
+          ph="RightPane.Content"
+          uid="{BE98BB1B-8D2F-44A4-98CD-61AF53D644E6}" />
+        <r
+          id="{C4393722-39FA-4869-9582-3A8EB8983A0D}"
+          par="Id=AnchorRow"
+          ph="AnchorBorder.Content"
+          uid="{34970426-4777-4066-9D9F-8327DBCEA4C1}" />
+        <r
+          id="{5CB208F6-1860-426B-8221-FAA85B329848}"
+          par="GridColumns=3&amp;Id=AnchorLabelCol"
+          ph="AnchorRow.Content"
+          uid="{B2CE0365-813B-4FC3-A08C-4C2941EA914D}" />
+        <r
+          id="{5CB208F6-1860-426B-8221-FAA85B329848}"
+          par="GridColumns=9&amp;Id=AnchorTextCol"
+          ph="AnchorRow.Content"
+          uid="{9E1AD071-FBC5-459F-A237-DBCE7A1610DE}" />
+        <r
+          ds="{4356CD88-1EE7-4CFE-A852-94AF8FEB7713}"
+          id="{7717EB6C-9F90-4C58-826D-5E87722A0318}"
+          par="Id=AnchorLabel"
+          ph="AnchorLabelCol.Content"
+          uid="{6F2BF44F-F9A6-41F0-932F-A411C1EBFF85}" />
+        <r
+          id="{57F86E9A-1844-45CE-BF8A-62900AE17A92}"
+          par="IsEnabled=1&amp;IsVisible=1&amp;Id=Anchor"
+          ph="AnchorTextCol.Content"
+          uid="{79D6261B-918C-473D-8E60-EA90535F50D9}" />
+        <r
+          id="{F6C9F461-FCAF-47DC-AA01-C8C64C2EFFB8}"
+          par="ContentAlign=Left&amp;UsePadding=1&amp;Id=StyleBorder"
+          ph="RightPane.Content"
+          uid="{51D99885-DB54-4DF5-B3EA-2A95F3275DF6}" />
+        <r
+          id="{C4393722-39FA-4869-9582-3A8EB8983A0D}"
+          par="Id=StyleRow"
+          ph="StyleBorder.Content"
+          uid="{6D34FC6B-2599-469E-8CE1-A2DD2A042881}" />
+        <r
+          id="{5CB208F6-1860-426B-8221-FAA85B329848}"
+          par="GridColumns=3&amp;Id=StyleLabelCol"
+          ph="StyleRow.Content"
+          uid="{D848A222-C818-48BB-9C1A-75B39BBDEB73}" />
+        <r
+          id="{5CB208F6-1860-426B-8221-FAA85B329848}"
+          par="GridColumns=9&amp;Id=StyleTextCol"
+          ph="StyleRow.Content"
+          uid="{B9107643-54BC-40FC-ADB0-1E848DB8E460}" />
+        <r
+          ds="{80E8D773-ADFB-4D1F-89E8-D0D062775736}"
+          id="{7717EB6C-9F90-4C58-826D-5E87722A0318}"
+          par="Id=StyleLabel"
+          ph="StyleLabelCol.Content"
+          uid="{7E0A3BA9-4537-47B4-B2D4-FE955D448B4F}" />
+        <r
+          id="{57F86E9A-1844-45CE-BF8A-62900AE17A92}"
+          par="IsEnabled=1&amp;IsVisible=1&amp;Id=Style"
+          ph="StyleTextCol.Content"
+          uid="{1224D2F9-4195-4158-9FE0-4AB949ED2E35}" />
+        <r
+          id="{F6C9F461-FCAF-47DC-AA01-C8C64C2EFFB8}"
+          par="ContentAlign=Left&amp;UsePadding=1&amp;Id=EventBorder"
+          ph="RightPane.Content"
+          uid="{C1941782-A5C8-4DBA-87E5-BCCE7E391C82}" />
+        <r
+          id="{C4393722-39FA-4869-9582-3A8EB8983A0D}"
+          par="Id=EventRow"
+          ph="EventBorder.Content"
+          uid="{54433AD0-D5A0-4082-B4E7-59B8E85A4916}" />
+        <r
+          id="{5CB208F6-1860-426B-8221-FAA85B329848}"
+          par="GridColumns=3&amp;Id=EventLabelCol"
+          ph="EventRow.Content"
+          uid="{5D810996-22A2-4211-8165-7291D6718B73}" />
+        <r
+          id="{5CB208F6-1860-426B-8221-FAA85B329848}"
+          par="GridColumns=9&amp;Id=EventTextCol"
+          ph="EventRow.Content"
+          uid="{8384F018-C0C5-4869-8510-16EFEB69BF51}" />
+        <r
+          ds="{1CD945B9-1F30-48C7-A7B1-55E55D972831}"
+          id="{7717EB6C-9F90-4C58-826D-5E87722A0318}"
+          par="Id=EventLabel"
+          ph="EventLabelCol.Content"
+          uid="{93905414-DFDB-40C8-8F61-7399456E6024}" />
+        <r
+          id="{25D357D3-3648-4336-9B53-55EED7CFA078}"
+          par="Items=%7bBinding+EventDataSource.Items%7d&amp;Id=Event"
+          ph="EventTextCol.Content"
+          uid="{513F875D-1E38-4F78-9F7F-2899A5CF4744}" />
+        <r
+          id="{57F86E9A-1844-45CE-BF8A-62900AE17A92}"
+          par="IsEnabled=1&amp;IsVisible=0&amp;Id=EventLoadedValue"
+          ph="EventTextCol.Content"
+          uid="{732538DE-3711-4338-9019-EB7101D2CF5A}" />
+        <r
+          id="{1169C5EF-E49C-4B59-848D-9C9204E40D12}"
+          par="Field=Rule&amp;RuleItemId=%7b2270A53B-0872-49C5-91E1-A03CAC14A69F%7d&amp;TargetControl=InsetAnchor&amp;Trigger=click&amp;Id=InsertAnchorRule"
+          ph="Page.Body"
+          uid="{D191D950-3527-4396-AB20-00B19F6A16DB}" />
+        <r
+          id="{1169C5EF-E49C-4B59-848D-9C9204E40D12}"
+          par="Field=Rule&amp;RuleItemId=%7b0771F446-AE6C-4DF1-8B80-F82843C2C309%7d&amp;TargetControl=CancelButton&amp;Trigger=click&amp;Id=CancelButtonRule"
+          ph="Page.Body"
+          uid="{9E2C768B-6A5E-4159-81C9-4F405BDAB465}" />
+      </d>
+    </r>
+- ID: "f7b4ebc1-2335-4eb8-afae-3444923a38be"
+  Hint: Subthemes
+  Type: Checklist
+  Value: "{F69304BA-2B80-4555-96DD-6F08559405E1}"
+Languages:
+- Language: da
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: InsertAnchorDialog
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181101T100352Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "7205a57f-93b4-413a-aa9a-6b16bbc59565"
+      Hint: BrowserTitle
+      Value: Indsæt anker
+- Language: "de-DE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: AnkerDialogEinfügen
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181101T100655Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "7205a57f-93b4-413a-aa9a-6b16bbc59565"
+      Hint: BrowserTitle
+      Value: Anker einfügen
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20130405T142225
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "7205a57f-93b4-413a-aa9a-6b16bbc59565"
+      Hint: BrowserTitle
+      Value: Insert Anchor
+- Language: "ja-JP"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: アンカー挿入ダイアログ
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181101T100936Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "7205a57f-93b4-413a-aa9a-6b16bbc59565"
+      Hint: BrowserTitle
+      Value: アンカーを挿入
+- Language: "zh-CN"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: InsertAnchorDialog
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181101T101222Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "7205a57f-93b4-413a-aa9a-6b16bbc59565"
+      Hint: BrowserTitle
+      Value: 插入定位

@@ -1,0 +1,21 @@
+---
+ID: "462aef16-6063-47b8-9a53-be503fae5ae6"
+Parent: "8dd6f35a-9bf0-45c9-abde-7846feb6c055"
+Template: "8dd6f35a-9bf0-45c9-abde-7846feb6c055"
+Path: /sitecore/templates/Foundation/SYMB2C/Mail/Mail Template/__Standard Values
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20210108T125320Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "81c65b5c-083f-4449-a635-2fca03ab7cad"
+      Hint: From
+      Value: info@symb2c.com

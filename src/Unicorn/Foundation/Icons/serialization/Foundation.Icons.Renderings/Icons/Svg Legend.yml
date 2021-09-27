@@ -1,0 +1,25 @@
+---
+ID: "6516fe4a-6483-40e5-9b66-df961deb9d71"
+Parent: "ce6414aa-9657-410b-84ec-a3581c67094e"
+Template: "2a3e91a0-7987-44b5-ab34-35c2d9de83b9"
+Path: /sitecore/layout/Renderings/Feature/SYMB2C/Icons/Svg Legend
+DB: master
+SharedFields:
+- ID: "ded9e431-3604-4921-a4b3-a6ec7636a5b6"
+  Hint: Controller Action
+  Value: Index
+- ID: "e64ad073-dfcc-4d20-8c0b-fe5aa6226cd7"
+  Hint: Controller
+  Value: SYMB2C.Foundation.Icons.Controllers.SvgLegendController, SYMB2C.Foundation.Icons
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20201009T212556Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

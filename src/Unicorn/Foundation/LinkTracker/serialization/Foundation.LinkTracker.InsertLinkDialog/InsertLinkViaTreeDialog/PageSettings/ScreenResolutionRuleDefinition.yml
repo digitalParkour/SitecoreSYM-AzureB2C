@@ -1,0 +1,129 @@
+---
+ID: "dd5207fc-c619-46ee-beb8-08e8d83417d4"
+Parent: "3613de82-2013-4682-b537-b616adfc1238"
+Template: "1f99ae6e-22b8-419e-81db-a983e619325e"
+Path: /sitecore/client/Applications/Dialogs/InsertLinkViaTreeDialog/PageSettings/ScreenResolutionRuleDefinition
+DB: core
+SharedFields:
+- ID: "431a0113-9d08-4dae-8c5b-ac8301512bd8"
+  Hint: Rule
+  Type: Rules
+  Value: |
+    <ruleset>
+      <rule>
+        <conditions>
+          <condition
+            id="{0B3B6E32-E4E5-40F6-A991-1E46C56C8ED0}"
+            uid="46F85D6795A742CFB2FB7727B09AA187"
+            min="0"
+            max="750" />
+        </conditions>
+        <actions>
+          <action
+            id="{3DA33BB4-9E03-48CD-AC5C-E48B825DD4B6}"
+            uid="{E3FC5B2A-C2FA-4FDE-BD26-F51BAC691F0B}"
+            targetControlId="SmartPanel"
+            propertyName="isOpen"
+            value="false" />
+        </actions>
+      </rule>
+      <rule
+        uid="B1ED73C3B74B4377B33835AE877524EB">
+        <conditions
+          uid="9177CC8421B14772A8AE37AE65BF4A04">
+          <and
+            uid="2D4D5B4AA2814A1E819F0DF88B268194">
+            <condition
+              id="{0B3B6E32-E4E5-40F6-A991-1E46C56C8ED0}"
+              uid="DE1EDAA715DD420690A8B7D2D64E01B0"
+              min="751"
+              max="4000" />
+            <condition
+              id="{E956001C-6ACD-4CE0-B7CC-F2B6EE7DDA94}"
+              uid="DFEDC6F76D694634A0E6540B268DABC8"
+              name="TreeView" />
+          </and>
+        </conditions>
+        <actions
+          uid="E7944A8D0CAA41A29566B38711C47D47">
+          <action
+            id="{3DA33BB4-9E03-48CD-AC5C-E48B825DD4B6}"
+            uid="{2BEBF2D7-336B-4803-B970-880A066A93CF}"
+            targetControlId="SmartPanel"
+            propertyName="isOpen"
+            value="true" />
+        </actions>
+      </rule>
+    </ruleset>
+Languages:
+- Language: da
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: ScreenResolutionRuleDefinition
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181101T100350Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+- Language: "de-DE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: BildschirmauflösungRegeldefinition
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181101T100653Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20130712T102645
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+- Language: "ja-JP"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: 画面の解像度ルール定義
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181101T100933Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+- Language: "zh-CN"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: ScreenResolutionRuleDefinition
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181101T101219Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

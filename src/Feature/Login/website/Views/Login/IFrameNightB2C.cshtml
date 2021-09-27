@@ -1,0 +1,18 @@
+@{ 
+    var showComponent = Sitecore.Context.PageMode.IsExperienceEditorEditing || !User.Identity.IsAuthenticated;
+}
+@if(showComponent)
+{ 
+    <div class="b2c-login">
+        @if (Sitecore.Context.PageMode.IsExperienceEditorEditing)
+        {
+            <div id="user-login" class="federated-login">Azure B2C Login Form</div>
+        }
+        else if (!User.Identity.IsAuthenticated)
+        {
+            <iframe id="user-login" class="federated-login"
+                    style='margin:0px; padding:0px; border:0px; width:400px; height:450px; overflow: hidden; scrolling: no; scrollbar: no;'
+                    src="/user/nightframein"></iframe>
+        }
+    </div>
+}

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+    <GeneralLink>
+        <Stylesheet Src="/sitecore/shell/Applications/Dialogs/GeneralLink/GeneralLink.css"/>
+        <Script Src="/sitecore/shell/Applications/Dialogs/GeneralLink/GeneralLink.js"/>
+        <FormDialog Icon="Network/32x32/link.png" Header="Insert a link" Text="Select the link type and specify the appropriate properties." OKButton="OK">
+            <CodeBeside Type="NES.Foundation.LinkTracker.sitecore.shell.Applications.Dialogs.GeneralLink.GeneralLinkForm,NES.Foundation.LinkTracker"/>
+            <DataContext ID="InternalLinkDataContext" ViewName="Master"/>
+            <DataContext ID="MediaLinkDataContext" Root="{3D6658D8-A0BF-4E75-B3E2-D050FABCF4E1}"/>
+            <GridPanel Height="100%" Width="100%" VAlign="top" Fixed="true" Columns="3">
+                <!--Left column-->
+                <Border ID="Modes" Height="100%" Class="left-column" Width="100%" GridPanel.Height="100%" GridPanel.Width="120px">
+                    <!--Internal link-->
+                    <Border ID="Internal" onclick="javascript:return scForm.invoke('OnModeChange','internal')" Class="selected">
+                        <a href="#" class="mode" onfocus="this.blur()">
+                            <ThemedImage Class="mode-icon" Src="Network/32x32/link.png"/>
+                            <div class="mode-text">
+                                <Literal Text="Internal Link"/>
+                            </div>
+                        </a>
+                    </Border>
+                    <!--Media link-->
+                    <Border ID="Media">
+                        <a href="#" class="mode" onclick="javascript:return scForm.invoke('OnModeChange','media')" onfocus="this.blur()">
+                            <ThemedImage Class="mode-icon" Src="Applications/32x32/photo_scenery.png"/>
+                            <div class="mode-text">
+                                <Literal Text="Media Link"/>
+                            </div>
+                        </a>
+                    </Border>
+                    <!--External link-->
+                    <Border ID="External">
+                        <a href="#" class="mode" onclick="javascript:return scForm.invoke('OnModeChange','external')" onfocus="this.blur()">
+                            <ThemedImage Class="mode-icon" Src="Network/32x32/earth.png?overlay=NetworkV2/16x16/link.png"/>
+                            <div class="mode-text">
+                                <Literal Text="External Link"/>
+                            </div>
+                        </a>
+                    </Border>
+                    <!--Anchor link-->
+                    <Border ID="Anchor">
+                        <a href="#" class="mode" onclick="javascript:return scForm.invoke('OnModeChange','anchor')" onfocus="this.blur()">
+                            <ThemedImage Class="mode-icon" Src="People/32x32/target.png"/>
+                            <div class="mode-text">
+                                <Literal Text="Anchor"/>
+                            </div>
+                        </a>
+                    </Border>
+                    <!--Mail link-->
+                    <Border ID="MailTo">
+                        <a href="#" class="mode" onclick="javascript:return scForm.invoke('OnModeChange','mailto')" onfocus="this.blur()">
+                            <ThemedImage Class="mode-icon" Src="Network/32x32/mail.png"/>
+                            <div class="mode-text">
+                                <Literal Text="Mail"/>
+                            </div>
+                        </a>
+                    </Border>
+                    <!--Mail link-->
+                    <Border ID="JavaScript">
+                        <a href="#" class="mode" onclick="javascript:return scForm.invoke('OnModeChange','javascript')" onfocus="this.blur()">
+                            <ThemedImage Class="mode-icon" Src="Software/32x32/text_code_javascript.png"/>
+                            <div class="mode-text">
+                                <Literal Text="JavaScript"/>
+                            </div>
+                        </a>
+                    </Border>
+                </Border>
+                <!--Center column-->
+                <Space GridPanel.Width="8px"/>
+                <!--Right column-->
+                <Border Class="right-column" Height="100%" GridPanel.Width="100%" GridPanel.Height="100%">
+                    <GridPanel Width="100%" Height="100%" ID="MainGrid">
+                        <Border Class="section-header" GridPanel.VAlign="top">
+                            <Literal ID="SectionHeader" Text="Select the item that you want to create a link to and specify the appropriate properties."/>
+                        </Border>
+                        <Scrollbox ID="TreeviewContainer" Width="100%" Height="100%" Border="0" GridPanel.Row.ID="TreeviewContainerRow" GridPanel.Height="100%" Padding="0" Class="scScrollbox scFixSize scKeepFixSize">
+                            <Border ID="InternalLinkTreeviewContainer">
+                                <TreeviewEx ID="InternalLinkTreeview" DataContext="InternalLinkDataContext" ShowRoot="true"/>
+                            </Border>
+                            <Border ID="MediaLinkTreeviewContainer" Visible="false">
+                                <TreeviewEx ID="MediaLinkTreeview" DataContext="MediaLinkDataContext" Click="SelectMediaTreeNode" DblClick="OnMediaOpen" ContextMenu="MediaLinkTreeview.GetContextMenu(&quot;contextmenu&quot;)"/>
+                            </Border>
+                        </Scrollbox>
+                        <Border ID="MediaPreview" Align="Center" Padding="8px" Background="white" Visible="false"/>
+                        <GridPanel GridPanel.Height="100%" Width="100%" CellPadding="0" GridPanel.VAlign="top" Columns="2" CellSpacing="8px">
+                            <Literal GridPanel.NoWrap="true" Text="Link Description:"/>
+                            <Edit Width="100%" Class="scQuirksBoxModel" GridPanel.Width="100%" GridPanel.Row.ID="TextRow" ID="Text"/>
+                            <Literal Text="URL:" GridPanel.NoWrap="true"/>
+                            <Border ID="UrlContainer" GridPanel.Row.ID="UrlContainerRow">
+                                <GridPanel Columns="2" Width="100%" GridPanel.Width="100%">
+                                    <Edit ID="Url" Class="scQuirksBoxModel" Width="100%" GridPanel.Width="100%"/>
+                                    <Button Header="Test" Click="javascript:testUrl();"/>
+                                </GridPanel>
+                            </Border>
+                            <Literal Text="Mailto:" GridPanel.NoWrap="true"/>
+                            <Border ID="MailToContainer" GridPanel.Row.ID="MailToContainerRow">
+                                <GridPanel Columns="2" Width="100%" GridPanel.Width="100%">
+                                    <Edit ID="MailToLink" Class="scQuirksBoxModel" Width="100%" GridPanel.Width="100%"/>
+                                    <Button Header="Send a test mail" Style="width:auto;white-space: nowrap" Click="javascript:testMail();"/>
+                                </GridPanel>
+                            </Border>
+                            <Literal Text="JavaScript:" GridPanel.VAlign="top" GridPanel.NoWrap="true"/>
+                            <Memo ID="JavascriptCode" GridPanel.Row.ID="JavascriptCodeRow" Width="100%" Height="80px" Class="scQuirksBoxModel" Wrap="off"/>
+                            <Literal Text="Anchor:" GridPanel.NoWrap="true"/>
+                            <Edit Width="100%" Class="scQuirksBoxModel" GridPanel.Row.ID="LinkAnchorRow" ID="LinkAnchor"/>
+                            <Label for="Target" GridPanel.NoWrap="true">
+                                <Literal Text="Target Window:"/>
+                            </Label>
+                            <Combobox ID="Target" GridPanel.Row.ID="TargetRow" Width="100%" Change="OnListboxChanged">
+                                <ListItem Value="Self" Header="Active browser"/>
+                                <ListItem Value="Custom" Header="Custom"/>
+                                <ListItem Value="New" Header="New browser"/>
+                            </Combobox>
+                            <Literal ID="Custom" Text="Custom:" GridPanel.NoWrap="true" GridPanel.Align="right"/>
+                            <Edit Width="100%" Class="scQuirksBoxModel" GridPanel.Row.ID="CustomTargetRow" ID="CustomTarget"/>
+                            <Literal Text="Style Class:" GridPanel.NoWrap="true"/>
+                            <Edit Width="100%" Class="scQuirksBoxModel" GridPanel.Row.ID="ClassRow" ID="Class"/>
+                            <Literal Text="Alternate Text:" GridPanel.NoWrap="true"/>
+                            <Edit Width="100%" Class="scQuirksBoxModel" ID="Title" GridPanel.Row.ID="TitleRow"/>
+                            <Literal Text="Query String:" GridPanel.NoWrap="true"/>
+                            <Edit Width="100%" Class="scQuirksBoxModel" GridPanel.Row.ID="QuerystringRow" ID="Querystring"/>
+                            <Label for="TriggerGoal" GridPanel.NoWrap="true">
+                                <Literal Text="Trigger Goal:"/>
+                            </Label>
+                            <Checkbox ID="TriggerGoal" GridPanel.Width="100%" Width="100%" />
+                            <Literal Text="GoalId:" GridPanel.NoWrap="true"/>
+                            <Combobox Width="100%" Class="scQuirksBoxModel" GridPanel.Row.ID="GoalIdRow" ID="GoalId"/>
+                            <Label for="TriggerPageEvent" GridPanel.NoWrap="true">
+                                <Literal Text="Trigger Page Event:"/>
+                            </Label>
+                            <Checkbox ID="TriggerPageEvent" GridPanel.Width="100%" Width="100%" />
+                            <Literal Text="EventId:" GridPanel.NoWrap="true"/>
+                            <Combobox Width="100%" Class="scQuirksBoxModel" GridPanel.Row.ID="EventIdRow" ID="EventId"/>
+                        </GridPanel>
+                    </GridPanel>
+                </Border>
+            </GridPanel>
+            <Button Header="Upload" ID="UploadMedia" def:placeholder="Buttons" Click="UploadImage"/>
+        </FormDialog>
+    </GeneralLink>
+</control>

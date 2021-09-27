@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TrustFrameworkPolicy 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+  xmlns="http://schemas.microsoft.com/online/cpim/schemas/2013/06" 
+  PolicySchemaVersion="0.3.0.0" 
+  TenantId="yourdevtenantb2c.onmicrosoft.com" 
+  PolicyId="B2C_1A_SYMB2C_TrustFrameworkExtensions" 
+  PublicPolicyUri="http://yourdevtenantb2c.onmicrosoft.com/B2C_1A_SYMB2C_TrustFrameworkExtensions">
+  
+  <BasePolicy>
+    <TenantId>yourdevtenantb2c.onmicrosoft.com</TenantId>
+    <PolicyId>B2C_1A_SYMB2C_TrustFrameworkBase</PolicyId>
+  </BasePolicy>
+  <BuildingBlocks>
+     <!-- custom verification email claim -->
+    <ClaimsSchema>
+        <ClaimType Id="verificationCode">
+            <DisplayName>Verification Code</DisplayName>
+            <DataType>string</DataType>
+            <UserHelpText>Add help text here</UserHelpText>
+            <UserInputType>TextBox</UserInputType>
+        </ClaimType>
+    </ClaimsSchema>
+    <ContentDefinitions>
+	<!-- This content definition is to render an error page that displays unhandled errors. -->
+      <ContentDefinition Id="api.error">
+        <LoadUri>https://qa.symb2csite.com/b2c/dev/error.html</LoadUri>
+        <RecoveryUri>~/common/default_page_error.html</RecoveryUri>
+        <DataUri>urn:com:microsoft:aad:b2c:elements:contract:globalexception:1.1.0</DataUri>
+        <Metadata>
+          <Item Key="DisplayName">Error page</Item>
+        </Metadata>
+      </ContentDefinition>
+
+      <ContentDefinition Id="api.idpselections">
+        <LoadUri>~/tenant/templates/AzureBlue/idpSelector.cshtml</LoadUri>
+        <RecoveryUri>~/common/default_page_error.html</RecoveryUri>
+        <DataUri>urn:com:microsoft:aad:b2c:elements:contract:providerselection:1.0.0</DataUri>
+        <Metadata>
+          <Item Key="DisplayName">Idp selection page</Item>
+          <Item Key="language.intro">Sign in</Item>
+        </Metadata>
+      </ContentDefinition>
+
+      <ContentDefinition Id="api.idpselections.signup">
+        <LoadUri>~/tenant/templates/AzureBlue/idpSelector.cshtml</LoadUri>
+        <RecoveryUri>~/common/default_page_error.html</RecoveryUri>
+        <DataUri>urn:com:microsoft:aad:b2c:elements:contract:providerselection:1.0.0</DataUri>
+        <Metadata>
+          <Item Key="DisplayName">Idp selection page</Item>
+          <Item Key="language.intro">Sign up</Item>
+        </Metadata>
+      </ContentDefinition>
+      <ContentDefinition Id="api.signuporsignin">
+        <LoadUri>https://qa.symb2csite.com/b2c/dev/signin.html</LoadUri>
+        <!--<LoadUri>~/tenant/templates/AzureBlue/unified.cshtml</LoadUri>-->          
+        <RecoveryUri>~/common/default_page_error.html</RecoveryUri>
+        <DataUri>urn:com:microsoft:aad:b2c:elements:contract:unifiedssp:1.0.0</DataUri>
+        <Metadata>
+          <Item Key="DisplayName">SignIn and Signup</Item>
+        </Metadata>
+      </ContentDefinition>
+      <ContentDefinition Id="api.selfasserted">
+        <LoadUri>https://qa.symb2csite.com/b2c/dev/signin.html</LoadUri>
+        <RecoveryUri>~/common/default_page_error.html</RecoveryUri>
+        <DataUri>urn:com:microsoft:aad:b2c:elements:contract:selfasserted:1.1.0</DataUri>
+        <Metadata>
+          <Item Key="DisplayName">Collect information from user page</Item>
+        </Metadata>
+      </ContentDefinition>
+
+      <ContentDefinition Id="api.selfasserted.profileupdate">
+        <LoadUri>https://qa.symb2csite.com/b2c/dev/editprofile.html</LoadUri>
+        <RecoveryUri>~/common/default_page_error.html</RecoveryUri>
+        <DataUri>urn:com:microsoft:aad:b2c:elements:contract:selfasserted:1.1.0</DataUri>
+        <Metadata>
+          <Item Key="DisplayName">Collect information from user page</Item>
+        </Metadata>
+      </ContentDefinition>
+      <ContentDefinition Id="api.selfasserted.passwordchange">
+        <LoadUri>https://qa.symb2csite.com/b2c/dev/changepassword.html</LoadUri>
+        <RecoveryUri>~/common/default_page_error.html</RecoveryUri>
+        <DataUri>urn:com:microsoft:aad:b2c:elements:contract:selfasserted:1.1.0</DataUri>
+        <Metadata>
+          <Item Key="DisplayName">Collect information from user page</Item>
+        </Metadata>
+      </ContentDefinition>
+      <ContentDefinition Id="api.localaccountsignup">
+        <LoadUri>https://qa.symb2csite.com/b2c/dev/signup.html</LoadUri>
+        <RecoveryUri>~/common/default_page_error.html</RecoveryUri>
+        <DataUri>urn:com:microsoft:aad:b2c:elements:contract:selfasserted:1.1.0</DataUri>
+        <Metadata>
+          <Item Key="DisplayName">Local account sign up page</Item>
+        </Metadata>
+      </ContentDefinition>
+
+      <ContentDefinition Id="api.localaccountpasswordreset">
+        <LoadUri>https://qa.symb2csite.com/b2c/dev/resetpassword.html</LoadUri>
+        <RecoveryUri>~/common/default_page_error.html</RecoveryUri>
+        <DataUri>urn:com:microsoft:aad:b2c:elements:contract:selfasserted:1.1.0</DataUri>
+        <Metadata>
+          <Item Key="DisplayName">Local account change password page</Item>
+        </Metadata>
+      </ContentDefinition>
+
+    </ContentDefinitions>
+  </BuildingBlocks>
+  <ClaimsProviders>    
+    <ClaimsProvider>
+      <DisplayName>Local Account SignIn</DisplayName>
+      <TechnicalProfiles>
+         <TechnicalProfile Id="login-NonInteractive">
+             <Metadata>
+                 <Item Key="client_id">YOUR-CLIENT-ID-HERE</Item>
+                 <Item Key="IdTokenAudience">YOUR-ID-TOKEN-HERE</Item>
+             </Metadata>
+             <InputClaims>
+                 <InputClaim ClaimTypeReferenceId="client_id" DefaultValue="YOUR-CLIENT-ID-HERE" />
+                 <InputClaim ClaimTypeReferenceId="resource_id" PartnerClaimType="resource" DefaultValue="YOUR-ID-TOKEN-HERE" />
+             </InputClaims>
+        </TechnicalProfile>
+
+        <!-- Sign up - Custom Email Verification -->
+        <TechnicalProfile Id="LocalAccountSignUpWithLogonEmail">
+            <Metadata>
+                <!-- Use custom email verification: Disable OOTB email verification-->
+                <Item Key="EnforceEmailVerification">False</Item>
+            </Metadata>
+            <OutputClaims>
+                <OutputClaim ClaimTypeReferenceId="objectId"/>
+                <OutputClaim ClaimTypeReferenceId="email" PartnerClaimType="Verified.Email" Required="true"/>
+                <!-- Custom email verification: Add the verification code claim type -->
+                <OutputClaim ClaimTypeReferenceId="verificationCode" Required="true"/>
+            </OutputClaims>
+            <ValidationTechnicalProfiles>
+                <ValidationTechnicalProfile ReferenceId="REST-EmailVerification"/>
+            </ValidationTechnicalProfiles>
+        </TechnicalProfile>
+
+          <!-- Reset Password - Custom Email Verification -->
+          <TechnicalProfile Id="LocalAccountDiscoveryUsingEmailAddress">
+              <Metadata>
+                  <!-- Use custom email verification: Disable OOTB email verification-->
+                  <Item Key="EnforceEmailVerification">False</Item>
+              </Metadata>
+              <OutputClaims>
+                  <OutputClaim ClaimTypeReferenceId="email" PartnerClaimType="Verified.Email" Required="true" />
+                  <!-- Custom email verification: Add the verification code claim type -->
+                  <OutputClaim ClaimTypeReferenceId="verificationCode" Required="true"/>
+              </OutputClaims>
+              <ValidationTechnicalProfiles>
+                  <ValidationTechnicalProfile ReferenceId="REST-EmailVerification"/>
+              </ValidationTechnicalProfiles>
+          </TechnicalProfile>
+      </TechnicalProfiles>
+    </ClaimsProvider>
+      
+      <!-- custom verification email -->
+      <ClaimsProvider>
+          <DisplayName>Custom REST API</DisplayName>
+          <TechnicalProfiles>
+              <TechnicalProfile Id="REST-EmailVerification">
+                  <DisplayName>Validate user input data and return loyaltyNumber claim</DisplayName>
+                  <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.RestfulProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+                  <Metadata>
+                    <Item Key="ServiceUrl">https://qa-cm.symb2csite.com/identity/verify</Item>
+                      
+                    <!--
+                    <Item Key="AuthenticationType">None</Item>
+                    <Item Key="AllowInsecureAuthInProduction">true</Item>
+                    -->                                      
+                    <Item Key="AuthenticationType">Basic</Item>
+                    <Item Key="AllowInsecureAuthInProduction">false</Item>
+                      
+                    <Item Key="SendClaimsIn">Body</Item>
+                  </Metadata>
+                  <CryptographicKeys>
+                      <Key Id="BasicAuthenticationUsername" StorageReferenceId="B2C_1A_RestApiUserName" />
+                      <Key Id="BasicAuthenticationPassword" StorageReferenceId="B2C_1A_RestApiPassword" />
+                  </CryptographicKeys>
+                  <InputClaims>
+                      <InputClaim ClaimTypeReferenceId="email" />
+                      <InputClaim ClaimTypeReferenceId="verificationCode" PartnerClaimType="code" />
+                  </InputClaims>
+                  <UseTechnicalProfileForSessionManagement ReferenceId="SM-Noop" />
+              </TechnicalProfile>
+          </TechnicalProfiles>
+      </ClaimsProvider>
+      
+  </ClaimsProviders>
+    
+</TrustFrameworkPolicy>

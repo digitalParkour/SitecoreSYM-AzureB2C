@@ -1,0 +1,122 @@
+---
+ID: "ccff2916-8f1b-454f-84ff-c8c6006623a5"
+Parent: "47b82a9d-3dc7-4024-8f0e-38320997c2a8"
+Template: "1f99ae6e-22b8-419e-81db-a983e619325e"
+Path: /sitecore/client/Applications/Dialogs/InsertEmailDialog/PageSettings/OkButtonRuleDefinition
+DB: core
+SharedFields:
+- ID: "431a0113-9d08-4dae-8c5b-ac8301512bd8"
+  Hint: Rule
+  Type: Rules
+  Value: |
+    <ruleset>
+      <rule>
+        <conditions>
+          <condition
+            id="{DC7F75A8-F299-4697-9166-D6D74DE4F2C3}"
+            uid="45BDEF00B6574105BE15799A2E181859"
+            name="Subject" />
+        </conditions>
+        <actions>
+          <action
+            id="{A81A766A-74B0-4F64-A933-7828C88C227B}"
+            uid="{3268A4BE-F615-43FD-A80D-146066CB6746}"
+            targetDisplayTextID="DisplayedText"
+            targetAdressID="EmailAddress"
+            targetSubjectID="Subject"
+            targetStyleID="Style" />
+        </actions>
+      </rule>
+      <rule
+        uid="3C66AFBAB9A64D50AF698152E48203EC">
+        <conditions
+          uid="43138A7647DC499EABFA29F39BD4DBF8">
+          <condition
+            id="{DC7F75A8-F299-4697-9166-D6D74DE4F2C3}"
+            uid="FBE1BF00E0A7477DAE1905E4E9939FDE"
+            name="Subject"
+            except="true" />
+        </conditions>
+        <actions
+          uid="D56F630F2A7443F2B8200ABB0A460BEE">
+          <action
+            id="{5B73C205-E933-4627-AB4E-FEA657F38D3B}"
+            uid="{2BA2AD4F-C624-4A25-B6A6-B3D160A0880A}"
+            targetDisplayTextID="DisplayedText"
+            targetAdressID="EmailAddress"
+            targetStyleID="Style" />
+        </actions>
+      </rule>
+    </ruleset>
+Languages:
+- Language: da
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: OkButtonRuleDefinition
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181101T100344Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+- Language: "de-DE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: OkButtonRegeldefinition
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181101T100648Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20130715T175446
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+- Language: "ja-JP"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: OK ボタン ルール定義
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181101T100928Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+- Language: "zh-CN"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: OkButtonRuleDefinition
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181101T101213Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

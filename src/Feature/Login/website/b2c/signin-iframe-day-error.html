@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign In</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="ROBOTS" content="NONE, NOARCHIVE">
+    <meta name="GOOGLEBOT" content="NOARCHIVE">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Martel+Sans:200,300,400,600,700&amp;display=swap"> -->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .attrEntry .error.itemLevel {
+            display: none;
+        }
+
+        .attrEntry.validate .error.itemLevel.show, .attrEntry.validate .helpText.show, .helpText.show {
+            display: block
+        }
+
+        .attrEntry input:invalid {
+            outline: 0
+        }
+
+        .attrEntry.validate input:invalid {
+            outline: #a61e0c solid 1px;
+            background-color: #fce8e8
+        }
+
+        .attrEntry .helpText {
+            display: none;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            color: #a61e0c;
+            font-size: .9em
+        }
+
+        .attrEntry .helpLink {
+            display: none
+        }
+
+        .alert-modal, .verifying-modal {
+            display: none
+        }
+
+        .verifying-modal {
+            color: #fff;
+            font-size: 24px;
+            display: none;
+            font-family: 'Segoe UI',Segoe,SegoeUI-Regular-final,Tahoma,Helvetica,Arial,sans-serif
+        }
+
+        .disclaimer-container {
+            text-align: left;
+            font-size: 10px
+        }
+
+            .disclaimer-container .disclaimer-link {
+                display: block;
+                width: fit-content
+            }
+
+        .divider {
+            display: none;
+        }
+    </style>
+    <style>
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            position: relative;
+            overflow: auto;
+            font-size: 16px;
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .hidden {
+            display: none;
+            visibility: hidden;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        @media only screen and (min-width: 787px) {
+            .mobile-only {
+                display: none !important;
+            }
+        }
+
+        @media only screen and (max-width: 786px) {
+            .mobile-hide {
+                display: none !important;
+            }
+        }
+
+        .nes-theme {
+            font-family: "Martel Sans", "Tahoma", "Geneva", sans-serif;
+            background: #E7E9EC;
+            color: #162e50;
+            padding: 0 30px;
+            min-height: 100%;
+            border-radius: 0 0 30px 0; /* show rounded corner when height is smaller */
+        }
+
+            .nes-theme.nes-theme--dark {
+                background: #162e50;
+                color: #fff;
+            }
+
+            .nes-theme a {
+                color: #162e50;
+            }
+
+            .nes-theme.nes-theme--dark a {
+                color: #fff;
+            }
+
+            .nes-theme a:hover,
+            .nes-theme a:focus,
+            .nes-theme a:active {
+                color: #E86929;
+            }
+
+            .nes-theme p {
+                line-height: 1.8;
+            }
+
+                .nes-theme p + p {
+                    margin-top: 1em;
+                }
+
+            .nes-theme *:focus {
+                outline: 1px solid #162e50;
+            }
+
+            .nes-theme.nes-theme.nes-theme--dark *:focus {
+                outline: 1px solid #0A7CAE;
+            }
+
+            .nes-theme .container {
+                max-width: 1280px;
+                margin: 0 auto;
+                padding: 50px 0;
+                text-align: center;
+            }
+
+        @media only screen and (max-width: 1280px) {
+            .nes-theme .container {
+                padding: 15px 15px 0;
+            }
+        }
+
+        .nes-theme h2 {
+            font-size: 1.6rem;
+            font-weight: bold;
+            line-height: 1.25;
+        }
+
+            .nes-theme h2 img {
+                max-height: 20px;
+                max-width: 20px;
+                position: relative;
+                top: 4px;
+            }
+
+        .nes-theme .buttons {
+            /*margin-top: 1em;*/
+            display: flex;
+            justify-content: space-between;
+        }
+
+            .nes-theme .buttons button {
+                border: 0;
+                display: inline-block;
+                padding: 0.6em 1.5em 0.5em 1.5em;
+                text-decoration: none;
+                border-radius: 6px;
+                font-size: 16px;
+                text-align: center;
+                text-transform: uppercase;
+                font-weight: 700;
+                background-color: #62a43d;
+                color: #fff;
+                cursor: pointer;
+                width: calc(50% - 5px);
+            }
+
+                .nes-theme .buttons button:hover {
+                    background-color: #4b7c30;
+                }
+
+            .nes-theme .buttons a {
+                border: 0;
+                display: inline-block;
+                padding: 0.6em 1.5em 0.5em 1.5em;
+                text-decoration: none;
+                border-radius: 6px;
+                font-size: 16px;
+                text-align: center;
+                text-transform: uppercase;
+                font-weight: 700;
+                background-color: #0A7CAE;
+                color: #fff;
+                cursor: pointer;
+                width: calc(50% - 5px);
+                box-sizing: border-box;
+            }
+
+                .nes-theme .buttons a:hover {
+                    background-color: #3255a4;
+                }
+
+        .nes-theme label {
+            font-size: 1.8rem;
+            border: 0;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
+        }
+
+        .error p {
+            margin: 0;
+            color: #E86929;
+            font-size: 1.2rem;
+            text-align: left;
+        }
+
+        .error {
+            color: #E86929;
+            font-size: 1.2rem;
+            text-align: left;
+        }
+
+        .nes-theme input {
+            width: 100%;
+            border-width: 0 0 1px 0;
+            border-style: solid;
+            border-color: #162e50;
+            color: #162e50;
+            background-color: transparent;
+            margin-bottom: 2em;
+            height: 26px;
+            font-size: 1.8rem;
+        }
+
+            .nes-theme input::placeholder {
+                color: #162e50;
+            }
+
+        .nes-theme.nes-theme--dark input {
+            border-color: #ccc;
+            color: #fff;
+        }
+
+            .nes-theme.nes-theme--dark input::placeholder {
+                color: #fff;
+            }
+
+        .entry-item {
+            position: relative;
+        }
+
+        .password-label a {
+            position: absolute;
+            bottom: 12px;
+            right: 0;
+            font-size: 1.2rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .create {
+            padding-top: 0.5em;
+        }
+
+            .create p {
+                margin: 0.5em 0;
+            }
+
+            .create a {
+                padding-left: 0.6rem;
+                text-decoration: none;
+                font-size: 1.3rem;
+            }
+
+        .intro {
+            padding: 0.5rem;
+        }
+
+        .squish {
+            padding-top: 0px;
+            margin-top: -8px;
+        }
+    </style>
+    <base target="_parent">
+    <script type="text/javascript">
+        window.parent.postMessage('true', '*');
+    </script>
+</head>
+<body>
+    <div class="nes-theme">
+        <main id="main">
+            <div id="content" class="container">
+                <p>Error. Please retry.</p>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

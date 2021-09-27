@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TrustFrameworkPolicy
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns="http://schemas.microsoft.com/online/cpim/schemas/2013/06"
+  PolicySchemaVersion="0.3.0.0"
+  TenantId="yourprodtenantb2c.onmicrosoft.com"
+  PolicyId="B2C_1A_SYMB2C_SignUpOrSignIn"
+  PublicPolicyUri="http://yourprodtenantb2c.onmicrosoft.com/B2C_1A_SYMB2C_SignUpOrSignIn">
+
+  <BasePolicy>
+    <TenantId>yourprodtenantb2c.onmicrosoft.com</TenantId>
+    <PolicyId>B2C_1A_SYMB2C_SeamlessMigrationExtensions</PolicyId>
+  </BasePolicy>
+
+  <RelyingParty>
+    <DefaultUserJourney ReferenceId="SignUpOrSignIn" />
+        
+    <UserJourneyBehaviors>
+        <SingleSignOn Scope="Tenant" />
+        <SessionExpiryType>Absolute</SessionExpiryType>
+        <SessionExpiryInSeconds>3600</SessionExpiryInSeconds>
+        <!-- Enable Javascript-->
+        <ScriptExecution>Allow</ScriptExecution>
+    </UserJourneyBehaviors>
+            
+    <TechnicalProfile Id="PolicyProfile">
+      <DisplayName>PolicyProfile</DisplayName>
+      <Protocol Name="OpenIdConnect" />
+    <!--<InputClaims>
+      <InputClaim ClaimTypeReferenceId="passwordPolicies" DefaultValue="DisablePasswordExpiration, DisableStrongPassword"/>
+    </InputClaims>-->
+      <OutputClaims>
+        <OutputClaim ClaimTypeReferenceId="signInNames.emailAddress" PartnerClaimType="email" />
+        <OutputClaim ClaimTypeReferenceId="newUser" DefaultValue="false" />
+        <OutputClaim ClaimTypeReferenceId="givenName" />
+        <OutputClaim ClaimTypeReferenceId="surname" />
+        <OutputClaim ClaimTypeReferenceId="objectId" PartnerClaimType="sub"/>
+        <!--<OutputClaim ClaimTypeReferenceId="identityProvider" />-->
+        <OutputClaim ClaimTypeReferenceId="tenantId" AlwaysUseDefaultValue="true" DefaultValue="{Policy:TenantObjectId}" />
+        <OutputClaim ClaimTypeReferenceId="extension_Phone"/>  
+        <OutputClaim ClaimTypeReferenceId="extension_PowerAccountList"/>
+        <OutputClaim ClaimTypeReferenceId="extension_LegacyUserId"/>
+        <OutputClaim ClaimTypeReferenceId="extension_BusinessName"/>
+        <OutputClaim ClaimTypeReferenceId="extension_requiresMigration"/>
+      </OutputClaims>
+      <SubjectNamingInfo ClaimType="sub" />
+    </TechnicalProfile>
+  </RelyingParty>
+</TrustFrameworkPolicy>
+
+
+

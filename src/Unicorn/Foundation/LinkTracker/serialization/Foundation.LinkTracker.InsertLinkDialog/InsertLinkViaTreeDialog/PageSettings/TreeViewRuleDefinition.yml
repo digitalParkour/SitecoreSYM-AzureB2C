@@ -1,0 +1,174 @@
+---
+ID: "0680a139-ebb2-448c-b018-6db0185b6d06"
+Parent: "3613de82-2013-4682-b537-b616adfc1238"
+Template: "1f99ae6e-22b8-419e-81db-a983e619325e"
+Path: /sitecore/client/Applications/Dialogs/InsertLinkViaTreeDialog/PageSettings/TreeViewRuleDefinition
+DB: core
+SharedFields:
+- ID: "431a0113-9d08-4dae-8c5b-ac8301512bd8"
+  Hint: Rule
+  Type: Rules
+  Value: |
+    <ruleset>
+      <rule>
+        <conditions>
+          <condition
+            id="{E956001C-6ACD-4CE0-B7CC-F2B6EE7DDA94}"
+            uid="0CA587892A98469E955E18ACF829F1B9"
+            name="TreeView" />
+        </conditions>
+        <actions>
+          <action
+            id="{F51FD432-BB4E-46E2-9A43-20F27C0BC24F}"
+            uid="{2C6D9FBE-0223-4159-9379-3DD948C10150}"
+            name="InsertLinkButton"
+            value="true" />
+          <action
+            id="{0EF20026-BA15-486C-B88E-5540002FAB10}"
+            uid="{802F9021-8376-4C6B-86D8-9EDA055BF28B}"
+            targetId="ItemName"
+            targetProperty="text"
+            sourceControlId="TreeView"
+            sourceProperty="$displayName" />
+          <action
+            id="{0EF20026-BA15-486C-B88E-5540002FAB10}"
+            uid="{D2FF0EC1-8B3C-4173-B394-338CECBBCE25}"
+            targetId="InfoType"
+            targetProperty="text"
+            sourceControlId="TreeView"
+            sourceProperty="$templateName" />
+          <action
+            id="{0EF20026-BA15-486C-B88E-5540002FAB10}"
+            uid="{BEE97401-30C9-4648-8ACF-FC9B71FAD3A8}"
+            targetId="InfoImage"
+            targetProperty="imageUrl"
+            sourceControlId="TreeView"
+            sourceProperty="$mediaurl" />
+        </actions>
+      </rule>
+      <rule
+        uid="E65EC31380E94D10A89278D754F271CB">
+        <conditions
+          uid="11F68E223EC54E52844AE00FF5B6BB94">
+          <condition
+            id="{E956001C-6ACD-4CE0-B7CC-F2B6EE7DDA94}"
+            uid="D90071FCBCDE414EABC7EF0989E3BF97"
+            name="TreeView"
+            except="true" />
+        </conditions>
+        <actions
+          uid="B00AB042740949E29EC8EB078719C0E9">
+          <action
+            id="{3DA33BB4-9E03-48CD-AC5C-E48B825DD4B6}"
+            uid="{74C44CE3-D05E-463D-A629-02C8A87EA2DE}"
+            targetControlId="InsertLinkButton"
+            propertyName="isEnabled"
+            value="false" />
+          <action
+            id="{3DA33BB4-9E03-48CD-AC5C-E48B825DD4B6}"
+            uid="{DF761CC7-9C7B-4DC6-A802-25102DF20EDE}"
+            targetControlId="SmartPanel"
+            propertyName="isOpen"
+            value="false" />
+        </actions>
+      </rule>
+      <rule
+        uid="B8A87313259B40178416C73E6057DC8B">
+        <conditions
+          uid="D82B404E346C43F7B69AA6810B5EED03">
+          <and
+            uid="C9F4284E9F464D31BEA3558E95D89946">
+            <condition
+              id="{0B3B6E32-E4E5-40F6-A991-1E46C56C8ED0}"
+              uid="9BCD109084BA43548848BEAAA358A402"
+              min="751"
+              max="4000" />
+            <condition
+              id="{E956001C-6ACD-4CE0-B7CC-F2B6EE7DDA94}"
+              uid="5952273E3CEC45EE8AA05664D78328AE"
+              name="TreeView" />
+          </and>
+        </conditions>
+        <actions
+          uid="896761A5AAAB45A48C05DCB6BED3E83D">
+          <action
+            id="{3DA33BB4-9E03-48CD-AC5C-E48B825DD4B6}"
+            uid="{19F8F3C9-499C-491D-A2AB-3D60A9FF06DE}"
+            targetControlId="SmartPanel"
+            propertyName="isOpen"
+            value="true" />
+        </actions>
+      </rule>
+    </ruleset>
+Languages:
+- Language: da
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: TreeViewRuleDefinition
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181101T100248Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+- Language: "de-DE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: BaumAnsehenRegeldefinition
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181101T100544Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20130722T144835
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+- Language: "ja-JP"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: ツリー ビュー ルールの定義
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181101T100809Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+- Language: "zh-CN"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: TreeViewRuleDefinition
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181101T101057Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

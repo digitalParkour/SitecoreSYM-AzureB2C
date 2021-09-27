@@ -1,0 +1,27 @@
+@using Sitecore.Mvc
+@using Sitecore.XA.Foundation.Mvc.Models
+@using Sitecore.XA.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.XA.Foundation.MarkupDecorator.Extensions
+@using SYMB2C.Feature.Login
+
+@{
+    var showComponent = Sitecore.Context.PageMode.IsExperienceEditorEditing || !User.Identity.IsAuthenticated;
+}
+@if (showComponent)
+{
+    <div @Html.Sxa().Component("b2c-login")>
+        <p class="b2c-login__intro">
+            <span>@Html.Sitecore().Field(Templates.LoginBox.WelcomeText.FieldName)</span>
+            @Html.Sitecore().Field(Templates.LoginBox.SigninDirections.FieldName)
+        </p>
+        <a class="btn green" href="/user/signin">@Html.Sitecore().Field(Templates.LoginBox.ButtonText.FieldName)</a>
+        <hr>
+        <p class="b2c-login__forgot">
+            @Html.Sitecore().Field(Templates.LoginBox.ForgotPasswordText.FieldName)
+            <a href="/user/password/reset">@Html.Sitecore().Field(Templates.LoginBox.ForgotPasswordLinkText.FieldName)</a>
+        <p class="b2c-login__bid-center">
+            @Html.Sitecore().Field(Templates.LoginBox.BidCenterText.FieldName)
+            @Html.Sitecore().Field(Templates.LoginBox.VendorLoginLink.FieldName)
+        </p>
+    </div>
+}

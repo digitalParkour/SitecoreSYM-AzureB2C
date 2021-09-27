@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TrustFrameworkPolicy
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns="http://schemas.microsoft.com/online/cpim/schemas/2013/06"
+  PolicySchemaVersion="0.3.0.0"
+  TenantId="yourdevtenantb2c.onmicrosoft.com"
+  PolicyId="B2C_1A_SYMB2C_SignIn_IframeDay"
+  PublicPolicyUri="http://yourdevtenantb2c.onmicrosoft.com/B2C_1A_SYMB2C_SignIn_IframeDay">
+
+  <BasePolicy>
+    <TenantId>yourdevtenantb2c.onmicrosoft.com</TenantId>
+    <PolicyId>B2C_1A_SYMB2C_SignUpOrSignIn</PolicyId>
+  </BasePolicy>
+
+    <BuildingBlocks>
+        <ContentDefinitions>
+            
+            <ContentDefinition Id="api.error">
+                <LoadUri>https://qa.symb2csite.com/b2c/dev/signin-iframe-day.html</LoadUri>
+            </ContentDefinition>
+
+            <ContentDefinition Id="api.signuporsignin">
+                <LoadUri>https://qa.symb2csite.com/b2c/dev/signin-iframe-day.html</LoadUri>
+            </ContentDefinition>
+            
+            <ContentDefinition Id="api.selfasserted">
+                <LoadUri>https://qa.symb2csite.com/b2c/dev/signin-iframe-day.html</LoadUri>
+            </ContentDefinition>
+
+        </ContentDefinitions>
+    </BuildingBlocks>
+
+    <RelyingParty>
+        <UserJourneyBehaviors>
+            <SingleSignOn Scope="Tenant" />
+            <SessionExpiryType>Absolute</SessionExpiryType>
+            <SessionExpiryInSeconds>3600</SessionExpiryInSeconds>
+            <!-- Enable Iframes-->
+            <JourneyFraming Sources="https://dev.symb2csite.com" Enabled="true"/>
+            <!-- Enable Javascript-->
+            <ScriptExecution>Allow</ScriptExecution>
+        </UserJourneyBehaviors>
+    </RelyingParty>
+    
+</TrustFrameworkPolicy>
+
+
+

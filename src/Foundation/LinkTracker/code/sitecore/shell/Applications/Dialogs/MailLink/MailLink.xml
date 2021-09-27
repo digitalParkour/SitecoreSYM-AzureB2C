@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <MailLink>
+    <FormDialog Icon="Network/32x32/mail.png" Header="Insert an email link" 
+      Text="Please specify the email address and any additional properties. To send a test mail use the Send a test mail button. When done, click OK."
+      OKButton="OK">
+
+      <CodeBeside Type="Sitecore.Shell.Applications.Dialogs.MailLink.MailLinkForm,Sitecore.Client"/>
+
+      <a id="mail"></a>
+      
+      <GridPanel Class="scFormTable" CellPadding="2" Columns="2" Width="100%">
+        <Label For="Text" GridPanel.NoWrap="true"><Literal Text="Link description:"/></Label>
+        <Edit ID="Text" Width="100%" GridPanel.Width="100%"/>
+        
+        <Label For="Url" GridPanel.NoWrap="true"><Literal Text="Mailto:"/></Label>
+        <Edit ID="Url" Width="100%" />
+
+        <Label For="Class" GridPanel.NoWrap="true"><Literal Text="Style class:" /></Label>
+        <Edit ID="Class" Width="100%" />
+        
+        <Label for="Title" GridPanel.NoWrap="true"><Literal Text="Alternate text:"/></Label>
+        <Edit ID="Title" Width="100%" />
+
+
+          <!--<Label for="TriggerGoal" GridPanel.NoWrap="true">
+              <Literal Text="Trigger Goal:"/>
+          </Label>
+          <Checkbox ID="TriggerGoal" GridPanel.Width="100%" Width="100%" />-->
+
+          <Label for="Goal" GridPanel.NoWrap="true">
+              <Literal Text="Goal:"/>
+          </Label>
+          <Combobox ID="Goal" GridPanel.Width="100%" Width="100%" Change="OnListboxChanged">
+          </Combobox>
+
+          <!--<Label For="GoalData" GridPanel.NoWrap="true">
+              <Literal Text="Goal data value:" />
+          </Label>
+          <Edit ID="GoalData" Width="100%" />-->
+
+          <Label for="TriggerPageEvent" GridPanel.NoWrap="true">
+              <Literal Text="Trigger Page Event:"/>
+          </Label>
+          <Checkbox ID="TriggerPageEvent" GridPanel.Width="100%" Width="100%" />
+
+          <Label for="PageEvent" GridPanel.NoWrap="true">
+              <Literal Text="Page Event:"/>
+          </Label>
+          <Combobox ID="PageEvent" GridPanel.Width="100%" Width="100%" Change="OnListboxChanged">
+          </Combobox>
+
+          <!--<Label For="PageEventData" GridPanel.NoWrap="true">
+              <Literal Text="Page Event data value:" />
+          </Label>
+          <Edit ID="PageEventData" Width="100%" />
+
+          <Label for="TriggerCampaign" GridPanel.NoWrap="true">
+              <Literal Text="Trigger Campaign:"/>
+          </Label>
+          <Checkbox ID="TriggerCampaign" GridPanel.Width="100%" Width="100%" />
+
+          <Label for="Campaign" GridPanel.NoWrap="true">
+              <Literal Text="Campaign:"/>
+          </Label>
+          <Combobox ID="Campaign" GridPanel.Width="100%" Width="100%" Change="OnListboxChanged">
+          </Combobox>
+
+          <Label For="CampaignData" GridPanel.NoWrap="true">
+              <Literal Text="Campaign data value:" />
+          </Label>
+          <Edit ID="CampaignData" Width="100%" />-->
+      </GridPanel>
+      
+      <Button Header="Send a test mail" def:placeholder="Buttons" Click="OnTest"/>
+    </FormDialog>
+  </MailLink>
+</control>

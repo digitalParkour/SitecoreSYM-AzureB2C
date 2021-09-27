@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <InternalLink>
+    <FormDialog Icon="Network/32x32/link.png" Header="Internal Link" Text="Select the item that you want to create a link to and specify the appropriate properties." OKButton="OK">
+      
+        
+        <!--<CodeBeside Type="Sitecore.Shell.Applications.Dialogs.InternalLink.InternalLinkForm,Sitecore.Client"/>-->
+
+        <Stylesheet Src="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css" />
+        <Stylesheet Src="/scripts/css/LinkTracker.css" />
+        <Script type="text/JavaScript" src="https://code.jquery.com/jquery-1.12.4.js" />
+        <Script type="text/JavaScript" src="https://code.jquery.com/ui/1.12.0/jquery-ui.js" />
+        <Script type="text/JavaScript" src="/scripts/js/LinkTracker.js" />
+        <CodeBeside Type="NES.Foundation.LinkTracker.sitecore.shell.Applications.Dialogs.InternalLink.TrackedInternalLink, NES.Foundation.LinkTracker" />
+
+        <DataContext ID="InternalLinkDataContext"/>
+
+      <GridPanel Columns="2" Width="100%" Height="100%" Style="table-layout:fixed">
+        <Scrollbox Width="100%" Height="100%" Class="scScrollbox" Style="margin-right: 15px;" Background="window" Padding="0" Border="1px solid #CFCFCF" GridPanel.VAlign="top" GridPanel.Width="45%" GridPanel.Height="100%">
+          <TreeviewEx ID="Treeview" DataContext="InternalLinkDataContext" MultiSelect="False" Style="padding: 10px 0"/>
+        </Scrollbox>
+
+        <GridPanel Class="scFormTable" Width="100%" CellPadding="2" Columns="2" GridPanel.VAlign="top" GridPanel.Style="padding-left: 20px">
+          <Literal Text="Link Description:" GridPanel.NoWrap="true"/>
+          <Edit ID="Text"/>
+
+          <Literal Text="Anchor:" GridPanel.NoWrap="true"/>
+          <Edit ID="Anchor"/>
+
+          <Label for="Target" GridPanel.NoWrap="true">
+            <Literal Text="Target Window:"/>
+          </Label>
+          <Combobox ID="Target" Width="100%" Change="OnListboxChanged">
+            <ListItem Value="Self" Header="Active browser"/>
+            <ListItem Value="Custom" Header="Custom"/>
+            <ListItem Value="New" Header="New browser"/>
+          </Combobox>
+
+          <Panel ID="CustomLabel" Background="transparent" Border="none" GridPanel.NoWrap="true">
+            <Label For="CustomTarget">
+              <Literal Text="Custom:" />
+            </Label>
+          </Panel>
+          <Edit ID="CustomTarget" />
+
+          <Literal Text="Style Class:" GridPanel.NoWrap="true"/>
+          <Edit ID="Class"/>
+
+          <Literal Text="Alternate Text:" GridPanel.NoWrap="true"/>
+          <Edit ID="Title"/>
+
+          <Literal Text="Query String:" GridPanel.NoWrap="true"/>
+          <Edit ID="Querystring"/>
+
+            
+            <Label for="TriggerGoal" GridPanel.NoWrap="true">
+                <Literal Text="Trigger Goal:"/>
+            </Label>
+            <Checkbox ID="TriggerGoal" GridPanel.Width="100%" Width="100%" />
+
+            <Label for="Goal" GridPanel.NoWrap="true">
+                <Literal Text="Goal:"/>
+            </Label>
+            <Combobox ID="Goal" GridPanel.Width="100%" Width="100%" Change="OnListboxChanged">
+            </Combobox>
+
+            <Label For="GoalData" GridPanel.NoWrap="true">
+                <Literal Text="Goal data value:" />
+            </Label>
+            <Edit ID="GoalData" Width="100%" />
+
+            <Label for="TriggerPageEvent" GridPanel.NoWrap="true">
+                <Literal Text="Trigger Page Event:"/>
+            </Label>
+            <Checkbox ID="TriggerPageEvent" GridPanel.Width="100%" Width="100%" />-->
+
+            <Label for="PageEvent" GridPanel.NoWrap="true">
+                <Literal Text="Page Event:"/>
+            </Label>
+            <Combobox ID="PageEvent" GridPanel.Width="100%" Width="100%" Change="OnListboxChanged">
+            </Combobox>
+
+            <!--<Label For="PageEventData" GridPanel.NoWrap="true">
+                <Literal Text="Page Event data value:" />
+            </Label>
+            <Edit ID="PageEventData" Width="100%" />
+
+            <Label for="TriggerCampaign" GridPanel.NoWrap="true">
+                <Literal Text="Trigger Campaign:"/>
+            </Label>
+            <Checkbox ID="TriggerCampaign" GridPanel.Width="100%" Width="100%" />
+
+            <Label for="Campaign" GridPanel.NoWrap="true">
+                <Literal Text="Campaign:"/>
+            </Label>
+            <Combobox ID="Campaign" GridPanel.Width="100%" Width="100%" Change="OnListboxChanged">
+            </Combobox>
+
+            <Label For="CampaignData" GridPanel.NoWrap="true">
+                <Literal Text="Campaign data value:" />
+            </Label>
+            <Edit ID="CampaignData" Width="100%" />-->
+
+        </GridPanel>
+
+      </GridPanel>
+
+    </FormDialog>
+  </InternalLink>
+</control>

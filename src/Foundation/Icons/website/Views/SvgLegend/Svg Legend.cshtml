@@ -1,0 +1,13 @@
+@model SYMB2C.Foundation.Icons.Models.SvgLegendModel
+
+<svg class="svg-sprite" aria-hidden="true" viewbox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display: none;">
+        @if (Model.Legend != null && Model.Legend.Count > 0)
+        {
+        <defs>
+            @foreach(var svg in Model.Legend)
+            {
+                @Html.Raw(svg.ToString())
+            }
+        </defs>
+        }
+</svg>

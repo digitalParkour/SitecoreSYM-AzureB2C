@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7DF62EFE-D11E-4141-B5B0-5694D4722AA8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SYMB2C.Foundation.Consumer.Tests</RootNamespace>
+    <AssemblyName>SYMB2C.Foundation.Consumer.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DevOps|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoFixture.Xunit2">
+      <Version>4.15.0</Version>
+    </PackageReference>
+    <PackageReference Include="FluentAssertions">
+      <Version>5.10.3</Version>
+    </PackageReference>
+    <PackageReference Include="xunit">
+      <Version>2.4.1</Version>
+    </PackageReference>
+    <PackageReference Include="xunit.extensibility.core">
+      <Version>2.4.1</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Caching\website\SYMB2C.Foundation.Caching.csproj">
+      <Project>{83A6824A-825C-4AC6-9DAA-B1D6E4AD6256}</Project>
+      <Name>SYMB2C.Foundation.Caching</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Consumer.Abstractions\website\SYMB2C.Foundation.Consumer.Abstractions.csproj">
+      <Project>{1FC84E5D-1965-433A-87E1-CD8C767D878D}</Project>
+      <Name>SYMB2C.Foundation.Consumer.Abstractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Logging\website\SYMB2C.Foundation.Logging.csproj">
+      <Project>{6308611a-aca7-47ef-a639-e11e266b42b5}</Project>
+      <Name>SYMB2C.Foundation.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Testing\tests\SYMB2C.Foundation.Testing\SYMB2C.Foundation.Testing.csproj">
+      <Project>{312A998A-370F-4AD5-B8F9-E93463BAAD67}</Project>
+      <Name>SYMB2C.Foundation.Testing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\website\SYMB2C.Foundation.Consumer.csproj">
+      <Project>{29D455B7-CCD1-465B-A7F9-3D4AD1AF5AB4}</Project>
+      <Name>SYMB2C.Foundation.Consumer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
