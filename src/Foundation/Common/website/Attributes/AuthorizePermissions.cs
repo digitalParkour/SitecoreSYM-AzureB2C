@@ -8,9 +8,6 @@ using SYMB2C.Foundation.Common.Enum;
 
 namespace SYMB2C.Foundation.Common.Attributes
 {
-    /// <summary>
-    /// Authorize Permission for Nes accounts.
-    /// </summary>
     [AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
     public class AuthorizePermissionsAttribute : FilterAttribute, IAuthorizationFilter
     {

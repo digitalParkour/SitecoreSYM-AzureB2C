@@ -3,7 +3,7 @@ namespace SYMB2C.Foundation.Common.Constants
 {
     public class SYMB2CConstants
     {
-        public const string NesCustomLogFileAppender = "NesCustomLogFileAppender";
+        public const string CustomLogFileAppender = "CustomLogFileAppender";
     }
 
     public class PageConstants

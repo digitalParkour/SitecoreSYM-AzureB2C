@@ -4,7 +4,7 @@
 		<Stylesheet Src="/sitecore/shell/Applications/Dialogs/GeneralLink/GeneralLink.css"/>
 		<Script Src="/sitecore/shell/Applications/Dialogs/GeneralLink/GeneralLink.js"/>
 		<FormDialog Icon="Network/32x32/link.png" Header="Insert a link" Text="Select the link type and specify the appropriate properties." OKButton="OK">
-			<CodeBeside Type="NES.Foundation.LinkTracker.sitecore.shell.Applications.Dialogs.GeneralLink.GeneralLinkForm,NES.Foundation.LinkTracker"/>
+			<CodeBeside Type="SYMB2C.Foundation.LinkTracker.sitecore.shell.Applications.Dialogs.GeneralLink.GeneralLinkForm,SYMB2C.Foundation.LinkTracker"/>
 			<DataContext ID="InternalLinkDataContext" ViewName="Master"/>
 			<DataContext ID="MediaLinkDataContext" Root="{3D6658D8-A0BF-4E75-B3E2-D050FABCF4E1}"/>
 			<GridPanel Height="100%" Width="100%" VAlign="top" Fixed="true" Columns="3">

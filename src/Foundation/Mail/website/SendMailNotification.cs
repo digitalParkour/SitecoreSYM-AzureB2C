@@ -31,7 +31,7 @@ namespace SYMB2C.Foundation.Mail
 
         public bool PrepareSendMail(MailMessage mailMessage)
         {
-            _customLogger.LogMessage(SYMB2CConstants.NesCustomLogFileAppender, "Sending email", Logtype.INFO);
+            _customLogger.LogMessage(SYMB2CConstants.CustomLogFileAppender, "Sending email", Logtype.INFO);
             try
             {
                 SmtpClient smtpClient = new SmtpClient
@@ -46,7 +46,7 @@ namespace SYMB2C.Foundation.Mail
             }
             catch (Exception ex)
             {
-                _customLogger.LogMessage(SYMB2CConstants.NesCustomLogFileAppender, ex.StackTrace + ex.Message, Logtype.ERROR);
+                _customLogger.LogMessage(SYMB2CConstants.CustomLogFileAppender, ex.StackTrace + ex.Message, Logtype.ERROR);
                 _logRepository.LogFormattedError(ex.StackTrace);
                 return false;
             }

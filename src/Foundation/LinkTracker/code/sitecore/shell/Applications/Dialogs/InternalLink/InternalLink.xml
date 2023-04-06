@@ -11,7 +11,7 @@
         <Script type="text/JavaScript" src="https://code.jquery.com/jquery-1.12.4.js" />
         <Script type="text/JavaScript" src="https://code.jquery.com/ui/1.12.0/jquery-ui.js" />
         <Script type="text/JavaScript" src="/scripts/js/LinkTracker.js" />
-        <CodeBeside Type="NES.Foundation.LinkTracker.sitecore.shell.Applications.Dialogs.InternalLink.TrackedInternalLink, NES.Foundation.LinkTracker" />
+        <CodeBeside Type="SYMB2C.Foundation.LinkTracker.sitecore.shell.Applications.Dialogs.InternalLink.TrackedInternalLink, SYMB2C.Foundation.LinkTracker" />
 
         <DataContext ID="InternalLinkDataContext"/>
 

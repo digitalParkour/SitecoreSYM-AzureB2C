@@ -10,7 +10,7 @@ using SYMB2C.Foundation.Logging.Helpers;
 namespace SYMB2C.Foundation.Logging.Repositories
 {
     /// <summary>
-    /// Nes Event Logger.
+    /// Custom Event Logger.
     /// </summary>
     [Service(typeof(IEventLogger), Lifetime = Lifetime.Singleton)]
     public class EventLogger : IEventLogger

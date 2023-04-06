@@ -291,8 +291,8 @@
       <ClaimType Id="extension_PowerAccountList">
         <DisplayName>Account Number</DisplayName>
         <DataType>string</DataType>
-        <AdminHelpText>List of NES Power Accounts formatted: account-number1:nickname1|account-number2:nickname2</AdminHelpText>
-        <UserHelpText>NES Power account number</UserHelpText>
+        <AdminHelpText>List of Accounts</AdminHelpText>
+        <UserHelpText>account number</UserHelpText>
         <UserInputType>TextBox</UserInputType>
       </ClaimType>
 

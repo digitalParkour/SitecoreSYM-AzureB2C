@@ -48,13 +48,13 @@ namespace SYMB2C.Feature.Login.Services
                     contact = new Contact(new ContactIdentifier(reference.Source, reference.Identifier, ContactIdentifierType.Known));
                     client.AddContact(contact);
 
-                    if (reference.Source == "NesLogin")
+                    if (reference.Source == "Login")
                     {
                         Guid channelId = Guid.Parse("{B418E4F2-1013-4B42-A053-B6D4DCA988BF}");
                         string userAgent = HttpContext.Current.Request.UserAgent;
                         var interaction = new Interaction(contact, InteractionInitiator.Contact, channelId, userAgent);
 
-                        Guid goalID = Guid.Parse("{A661ADE4-2F12-42C5-A66D-F0D940035751}"); // ID of goal item
+                        Guid goalID = Guid.Parse("{A661ADE4-2F12-42C5-A66D-F0D940035752}"); // ID of goal item
                         var goal = new Goal(goalID, DateTime.UtcNow);
 
                         Sitecore.Data.Items.Item personalLogin = Sitecore.Context.Database.Items.GetItem("{A661ADE4-2F12-42C5-A66D-F0D940035751}");
